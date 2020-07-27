@@ -31,7 +31,7 @@ import org.springframework.messaging.PollableChannel;
  */
 @Configuration
 public class KafkaConfig {
-    @Value("${kafka.topic:inventoryTest}")
+    @Value("${kafka.topic:loanTest}")
     private String topic;
 
     @Value("${kafka.broker.address:localhost:9092}")

@@ -10,23 +10,23 @@
 <table>
     <thead>
     <tr>
-        <td>Product Name</td>
-        <td>Stock</td>
-        <td>Price</td>
+        <td>Customer Name</td>
+        <td>Loan Amount</td>
+        <td>Interest percentage</td>
         <td>Action</td>
     </tr>
     </thead>
     <tbody>
-    <#list inventories as inventory>
-    <tr>
-        <td>${inventory.productName}</td>
-        <td>${inventory.stock}</td>
-        <td>${inventory.price}</td>
-        <td><a href="editStock/${inventory.id}"><button type="button">update stock</button></a></td>
-        <td><a href="editPrice/${inventory.id}"><button type="button">update price</button></a></td>
-        <td><a href="delete/${inventory.id}"><button type="button">delete</button></a></td>
-    </tr>
-    </#list>
+    <#list loans as loan>
+       <tr>
+               <td>${loan.customerName}</td>
+               <td>${loan.loanAmount}</td>
+               <td>${loan.interestPercentage}</td>
+               <td><a href="editStock/${loan.id}"><button type="button">update stock</button></a></td>
+               <td><a href="editPrice/${loan.id}"><button type="button">update price</button></a></td>
+               <td><a href="delete/${loan.id}"><button type="button">delete</button></a></td>
+           </tr>
+       </#list>
     <tr>
         <td colspan="4" align="right"><a href="create"><button type="button">add</button></a></td>
     </tr>

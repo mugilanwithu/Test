@@ -13,10 +13,10 @@ import static springfox.documentation.builders.PathSelectors.regex;
 
 @SpringBootApplication
 @EnableSwagger2
-public class InventoryAppApplication {
+public class LoanAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InventoryAppApplication.class, args);
+		SpringApplication.run(LoanAppApplication.class, args);
 	}
 
 	@Bean

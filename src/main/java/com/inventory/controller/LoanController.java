@@ -1,8 +1,8 @@
 package com.inventory.controller;
 
-import com.inventory.dao.InventoryRepository;
+import com.inventory.dao.LoanRepository;
 import com.inventory.kafka.producer.UpdatePriceProducer;
-import com.inventory.model.Inventory;
+import com.inventory.model.Loan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -11,14 +11,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpSession;
 import java.util.List;
-/**
- * Created by eko.j.manurung on 6/2/2016.
- */
+
 @Controller
-public class InventoryController {
+public class LoanController {
 
     @Autowired
-    private InventoryRepository repository;
+    private LoanRepository repository;
 
     @Autowired
     ConfigurableApplicationContext context;
@@ -32,18 +30,18 @@ public class InventoryController {
 
     @RequestMapping(value = "editStock/{id}", method = RequestMethod.GET)
     public String updateStockInventory(Model model, @PathVariable String id){
-        Inventory inventory = repository.findById(id);
+        Loan loan = repository.findById(id);
 
-        model.addAttribute(inventory);
+        model.addAttribute(loan);
 
         return "updateStock";
     }
 
     @RequestMapping(value = "editPrice/{id}", method = RequestMethod.GET)
     public String updatePriceInventory(Model model, @PathVariable String id){
-        Inventory inventory = repository.findById(id);
+        Loan loan = repository.findById(id);
 
-        model.addAttribute(inventory);
+        model.addAttribute(loan);
 
         return "updatePrice";
     }
@@ -58,9 +56,8 @@ public class InventoryController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public ModelAndView addInventory(@ModelAttribute("inventory") Inventory inventory, Model model){
-        repository.save(inventory);
-
+    public ModelAndView addInventory(@ModelAttribute("loan") Loan loan, Model model){
+        repository.save(loan);
         return new ModelAndView("redirect:/");
     }
 
@@ -78,9 +75,9 @@ public class InventoryController {
 
     @RequestMapping("/")
     public ModelAndView getAll(HttpSession httpSession){
-        List<Inventory> result = repository.findAll();
+        List<Loan> result = repository.findAll();
         ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("inventories", result);
+        modelAndView.addObject("loans", result);
 
         return modelAndView;
     }

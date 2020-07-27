@@ -1,6 +1,6 @@
 package com.inventory.dao;
 
-import com.inventory.model.Inventory;
+import com.inventory.model.Loan;
 import com.mongodb.WriteResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.query.Update;
 /**
  * Created by eko.j.manurung on 6/2/2016.
  */
-public class InventoryRepositoryImpl implements InventoryRepositoryCustom {
+public class LoanRepositoryImpl implements LoanRepositoryCustom {
 
     @Autowired
     private MongoTemplate mongoTemplate;
@@ -25,7 +25,7 @@ public class InventoryRepositoryImpl implements InventoryRepositoryCustom {
         Update update = new Update();
         update.set("stock", stock);
 
-        WriteResult result = mongoTemplate.updateFirst(query, update, Inventory.class, Inventory.COLLECTION_NAME);
+        WriteResult result = mongoTemplate.updateFirst(query, update, Loan.class, Loan.COLLECTION_NAME);
 
         return result.getN();
     }
@@ -38,7 +38,7 @@ public class InventoryRepositoryImpl implements InventoryRepositoryCustom {
         Update update = new Update();
         update.set("price", price);
 
-        WriteResult result = mongoTemplate.updateFirst(query, update, Inventory.class, Inventory.COLLECTION_NAME);
+        WriteResult result = mongoTemplate.updateFirst(query, update, Loan.class, Loan.COLLECTION_NAME);
 
         return result.getN();
     }
