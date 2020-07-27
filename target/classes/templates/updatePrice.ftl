@@ -14,12 +14,12 @@
             <td><label><input type="text" name="customerName" value="${loan.customerName}" disabled="true"></label></td>
         </tr>
         <tr>
-            <td><label>Stock</label></td>
+            <td><label>Loan Amount</label></td>
             <td><label>:</label></td>
             <td><label><input type="text" name="loanAmount" value="${loan.loanAmount}" disabled="true"></label><br></td>
         </tr>
         <tr>
-            <td><label>Price</label></td>
+            <td><label>Interest percentage</label></td>
             <td><label>:</label></td>
             <td><label><input type="text" name="interestPercentage" value="${loan.interestPercentage}"></label><br></td>
             <td><input type="hidden" name="id" value="${loan.id}"></td>

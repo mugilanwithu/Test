@@ -23,15 +23,16 @@ public class KafkaUpdatePriceProducer implements UpdatePriceProducer {
     }
 
     @Override
-    public void updateDataPriceAndPublishToKafka(String id, double price) {
+    public void updateDataPriceAndPublishToKafka(String id, double interestPercentage) {
 
         Loan loan = repository.findById(id);
         //check if new price < old price (diskon)
         //send to kafka
-        if(price < loan.getInterestPercentage()){
-            Message<?> content = new GenericMessage<String>(Double.toString(price));
+        if(interestPercentage < loan.getInterestPercentage()){
+            //system.out.println ("inside loop");
+            Message<?> content = new GenericMessage<String>(Double.toString(interestPercentage));
             toKafka.send(content);
         }
-        repository.updatePriceProduct(id, price);
+        repository.updatePriceProduct(id, interestPercentage);
     }
 }

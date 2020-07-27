@@ -31,12 +31,12 @@ public class LoanRepositoryImpl implements LoanRepositoryCustom {
     }
 
     @Override
-    public int updatePriceProduct(String id, double price) {
+    public int updatePriceProduct(String id, double interestPercentage) {
         Query query = new Query();
         query.addCriteria(Criteria.where("id").is(id));
 
         Update update = new Update();
-        update.set("price", price);
+        update.set("interestPercentage", interestPercentage);
 
         WriteResult result = mongoTemplate.updateFirst(query, update, Loan.class, Loan.COLLECTION_NAME);
 

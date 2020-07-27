@@ -47,10 +47,10 @@ public class LoanController {
     }
 
     @RequestMapping(value = "/updatePrice", method = RequestMethod.POST)
-    public ModelAndView updatePriceInventory(@ModelAttribute("id") String id, @ModelAttribute("price") double newPrice){
+    public ModelAndView updatePriceInventory(@ModelAttribute("id") String id, @ModelAttribute("interestPercentage") double newinterestPercentage){
         UpdatePriceProducer producer = context.getBean("kafkaUpdatePriceProducer",UpdatePriceProducer.class);
 
-        producer.updateDataPriceAndPublishToKafka(id, newPrice);
+        producer.updateDataPriceAndPublishToKafka(id, newinterestPercentage);
 
         return new ModelAndView("redirect:/");
     }

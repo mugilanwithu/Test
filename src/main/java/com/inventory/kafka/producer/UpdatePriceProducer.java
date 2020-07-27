@@ -5,5 +5,5 @@ package com.inventory.kafka.producer;
  */
 public interface UpdatePriceProducer {
 
-    void updateDataPriceAndPublishToKafka(String id, double price);
+    void updateDataPriceAndPublishToKafka(String id, double interestPercentage);
 }
