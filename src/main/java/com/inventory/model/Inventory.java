@@ -11,7 +11,6 @@ public class Inventory {
 
     @Id
     private String id;
-
     private String productName;
     private int stock;
     private double price;

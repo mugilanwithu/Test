@@ -33,7 +33,7 @@ public class InventoryAppApplication {
 		return new ApiInfoBuilder()
 				.title("Spring REST Sample with Swagger")
 				.description("Simple Inventory Distributed Application using kafka")
-				.contact("surung-mengajar")
+				.contact("Mugil")
 				.license("APL V2")
 				.licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
 				.version("2.0")

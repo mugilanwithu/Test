@@ -20,7 +20,7 @@ public class InventoryRestController {
     private InventoryRepository repository;
 
     @ApiOperation(value = "GetInventoryData", nickname = "getInventory")
-    @RequestMapping(method = RequestMethod.GET, path = "/getInventoryByCode", produces = "application/json")
+    @RequestMapping(method = RequestMethod.GET, path = "/create", produces = "application/json")
     @ApiImplicitParams({@ApiImplicitParam(name = "id", value = "Inventory Id",
             required = false, dataType = "string", paramType = "query", defaultValue = "1")
     })
