@@ -11,7 +11,7 @@
             <table>
                 <tr>
                     <td><label>Product Name</label></td>
-                    <td><label>:</label></td>
+                    <td><label>::</label></td>
                     <td><label><input type="text" name="productName"></label></td>
                 </tr>
                 <tr>
