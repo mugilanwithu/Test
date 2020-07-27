@@ -11,17 +11,17 @@
             <table>
                 <tr>
                     <td><label>Product Name</label></td>
-                    <td><label>::</label></td>
+                    <td><label>:</label></td>
                     <td><label><input type="text" name="productName"></label></td>
                 </tr>
                 <tr>
                     <td><label>Stock</label></td>
-                    <td><label>::</label></td>
+                    <td><label>:</label></td>
                     <td><label><input type="text" name="stock"></label><br></td>
                 </tr>
                 <tr>
                     <td><label>Price</label></td>
-                    <td><label>::</label></td>
+                    <td><label>:</label></td>
                     <td><label><input type="text" name="price"></label><br></td>
                 </tr>
                 <tr>
