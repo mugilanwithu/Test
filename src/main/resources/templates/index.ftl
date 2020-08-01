@@ -2,11 +2,11 @@
 
 <html lang="en">
 <head>
-    <title>Simple Inventory System</title>
+    <title>Simple Loan System</title>
     <link rel='stylesheet' href='/webjars/bootstrap/3.3.5/css/bootstrap.min.css'>
 </head>
 <body>
-<h2>Data Product List</h2>
+<h2>Loan details</h2>
 <table>
     <thead>
     <tr>

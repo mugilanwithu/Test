@@ -2,10 +2,10 @@
 
 <html lang="en">
 <head>
-    <title>Simple Inventory System</title>
+    <title>Simple Loan System</title>
 </head>
 <body>
-<h2>Update Price Product Inventory</h2>
+<h2>Update Interest rate and Loan Amount</h2>
 <form name="inventory" action="/updatePrice" method="post">
     <table>
         <tr>

@@ -1,10 +1,9 @@
-package com.inventory.model;
+package com.loan.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
 
-/**
- * Created by eko.j.manurung on 6/2/2016.
- */
+
 public class Loan {
 
     public static final String COLLECTION_NAME = "loan";
@@ -16,7 +15,13 @@ public class Loan {
     private double interestPercentage;
     private String mortageType;
 
+    @Autowired
     public Loan() {
+    }
+    @Autowired
+    public Loan(String id, double interestPercentage) {
+        this.id = id;
+        this.interestPercentage = interestPercentage;
     }
 
     public String getId() {

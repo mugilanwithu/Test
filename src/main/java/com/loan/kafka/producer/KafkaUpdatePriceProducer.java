@@ -1,7 +1,7 @@
-package com.inventory.kafka.producer;
+package com.loan.kafka.producer;
 
-import com.inventory.dao.LoanRepository;
-import com.inventory.model.Loan;
+import com.loan.dao.LoanRepository;
+import com.loan.model.Loan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.messaging.MessageChannel;

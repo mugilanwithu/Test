@@ -1,4 +1,4 @@
-package com.inventory;
+package com.loan;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,19 +20,21 @@ public class LoanAppApplication {
 	}
 
 	@Bean
-	public Docket newsApi() {
+
+
+	public Docket swaggerConfiguration() {
 		return new Docket(DocumentationType.SWAGGER_2)
-				.groupName("inventory")
+				.groupName("loan")
 				.apiInfo(apiInfo())
 				.select()
-				.paths(regex("/inventory.*"))
+				.paths(regex("/loan.*"))
 				.build();
 	}
 
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
-				.title("Spring REST Sample with Swagger")
-				.description("Simple Inventory Distributed Application using kafka")
+				.title("Loan Application")
+				.description("Simple Loan Distributed Application using kafka")
 				.contact("Mugil")
 				.license("APL V2")
 				.licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")

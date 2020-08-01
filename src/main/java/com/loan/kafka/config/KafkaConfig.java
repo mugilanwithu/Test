@@ -1,11 +1,10 @@
-package com.inventory.kafka.config;
+package com.loan.kafka.config;
 
 import java.util.Collections;
 import java.util.Map;
 import java.util.Properties;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.expression.common.LiteralExpression;
@@ -26,9 +25,7 @@ import org.springframework.integration.kafka.support.ProducerFactoryBean;
 import org.springframework.integration.kafka.support.ProducerMetadata;
 import org.springframework.messaging.MessageHandler;
 import org.springframework.messaging.PollableChannel;
-/**
- * Created by eko.j.manurung on 6/6/2016.
- */
+
 @Configuration
 public class KafkaConfig {
     @Value("${kafka.topic:loanTest}")

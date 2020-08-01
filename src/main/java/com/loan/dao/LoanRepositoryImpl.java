@@ -1,6 +1,6 @@
-package com.inventory.dao;
+package com.loan.dao;
 
-import com.inventory.model.Loan;
+import com.loan.model.Loan;
 import com.mongodb.WriteResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -8,9 +8,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 
-/**
- * Created by eko.j.manurung on 6/2/2016.
- */
+
 public class LoanRepositoryImpl implements LoanRepositoryCustom {
 
     @Autowired

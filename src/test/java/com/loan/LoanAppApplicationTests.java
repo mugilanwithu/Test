@@ -1,4 +1,4 @@
-package com.inventory;
+package com.loan;
 
 import org.junit.Ignore;
 import org.junit.Test;

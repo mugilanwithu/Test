@@ -1,8 +1,8 @@
-package com.inventory.controller;
+package com.loan.controller;
 
-import com.inventory.dao.LoanRepository;
-import com.inventory.kafka.producer.UpdatePriceProducer;
-import com.inventory.model.Loan;
+import com.loan.dao.LoanRepository;
+import com.loan.kafka.producer.UpdatePriceProducer;
+import com.loan.model.Loan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
+@RequestMapping("/api")
 public class LoanController {
 
     @Autowired
@@ -33,7 +34,6 @@ public class LoanController {
         Loan loan = repository.findById(id);
 
         model.addAttribute(loan);
-
         return "updateStock";
     }
 
@@ -73,12 +73,17 @@ public class LoanController {
         return new ModelAndView("redirect:/");
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/getAll")
     public ModelAndView getAll(HttpSession httpSession){
         List<Loan> result = repository.findAll();
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("loans", result);
 
         return modelAndView;
+    }
+
+    @RequestMapping(value = "/getByID", method = RequestMethod.GET)
+    public Loan getInventory(@RequestParam(value = "id", defaultValue = "1") String id) {
+        return repository.findById(id);
     }
 }

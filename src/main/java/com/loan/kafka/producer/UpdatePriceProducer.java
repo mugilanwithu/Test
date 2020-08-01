@@ -1,8 +1,6 @@
-package com.inventory.kafka.producer;
+package com.loan.kafka.producer;
 
-/**
- * Created by eko.j.manurung on 6/6/2016.
- */
+
 public interface UpdatePriceProducer {
 
     void updateDataPriceAndPublishToKafka(String id, double interestPercentage);

@@ -1,11 +1,9 @@
-package com.inventory.kafka.config;
+package com.loan.kafka.config;
 
 import org.springframework.context.SmartLifecycle;
 import org.springframework.integration.kafka.util.TopicUtils;
 
-/**
- * Created by eko.j.manurung on 6/6/2016.
- */
+
 public class TopicCreator implements SmartLifecycle {
 
     private final String topic;
