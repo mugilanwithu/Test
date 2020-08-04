@@ -28,11 +28,18 @@ public class KafkaUpdatePriceProducer implements UpdatePriceProducer {
         Loan loan = repository.findById(id);
         //check if new price < old price (diskon)
         //send to kafka
-        if(interestPercentage < loan.getInterestPercentage()){
+       // if(interestPercentage < loan.getInterestPercentage()){
             //system.out.println ("inside loop");
-            Message<?> content = new GenericMessage<String>(Double.toString(interestPercentage));
-            toKafka.send(content);
-        }
+           // Message<?> content = new GenericMessage<String>(Double.toString(interestPercentage));
+            //toKafka.send(content);
+
+        Message<?> content1 = new GenericMessage(loan.toString());
+        toKafka.send(content1);
+
+        // }
+        //Message<?> content = new GenericMessage<String>(loan.toString());
+
+
         repository.updatePriceProduct(id, interestPercentage);
     }
 }
