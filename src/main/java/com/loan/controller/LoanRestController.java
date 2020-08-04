@@ -68,7 +68,7 @@ public class LoanRestController {
         UpdatePriceProducer producer = context.getBean("kafkaUpdatePriceProducer", UpdatePriceProducer.class);
         String id= loan.getId();
         double newinterestPercentage = loan.getInterestPercentage();
-        producer.updateDataPriceAndPublishToKafka(id, newinterestPercentage,loan);
+        producer.updateDataPriceAndPublishToKafka(id, newinterestPercentage);
 
         return Util.createResponseEntity("Successful updation of a resource", HttpStatus.OK);
     }
