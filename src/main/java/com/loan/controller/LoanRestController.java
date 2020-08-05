@@ -9,6 +9,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 
 @RequestMapping(value = "loan")
@@ -72,6 +73,14 @@ public class LoanRestController {
 
         return Util.createResponseEntity("Successful updation of a resource", HttpStatus.OK);
     }
+
+    @RequestMapping(value = "delete/{id}", method = RequestMethod.GET)
+    public ResponseEntity<?> deleteProduct(@PathVariable String id){
+        repository.delete(id);
+
+        return Util.createResponseEntity("Successful deletion of a resource", HttpStatus.OK);
+    }
+
 
 }
 
